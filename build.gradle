@@ -9,8 +9,14 @@ repositories {
     mavenCentral()
 }
 
+def retrofit_version = '2.7.1'
+def moshi_version = '1.9.2'
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
 }
 
 compileKotlin {

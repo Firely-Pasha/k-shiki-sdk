@@ -1,7 +1,7 @@
 package net.pagala.kshikisdk.service
 
 import net.pagala.kshikisdk.filters.search.AnimeSearchFilter
-import net.pagala.kshikisdk.filters.search.TitleSearchFilter
+import net.pagala.kshikisdk.model.anime.Anime
 import net.pagala.kshikisdk.repository.AnimeRepository
 import net.pagala.kshikisdk.repository.build
 import retrofit2.Retrofit
@@ -11,7 +11,9 @@ class AnimeService(
 ) {
     private val animeRepository: AnimeRepository = retrofit.create(AnimeRepository::class.java)
 
-    fun getList() = animeRepository.getList()
+    fun getList() = animeRepository.getList() as List<Anime>
 
-    fun getList(animeSearchFilter: AnimeSearchFilter) = animeRepository.getList(animeSearchFilter.build())
+    fun getList(animeSearchFilter: AnimeSearchFilter) = animeRepository.getList(animeSearchFilter.build()) as List<Anime>
+
+    fun getRoles(anime: Int) = animeRepository.getRoles(anime)
 }

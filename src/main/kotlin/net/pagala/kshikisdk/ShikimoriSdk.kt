@@ -39,6 +39,7 @@ class ShikimoriSdk(
             val request = chain.request()
             chain.proceed(
                 request.newBuilder().apply {
+                    println(request.url().toString())
                     addHeader("User-Agent", "$appName $developerName")
                     if (!accessToken.isBlank()) {
                         addHeader("Authorization", "Bearer $accessToken")

@@ -1,6 +1,6 @@
-package net.pagala.kshikisdk.model.anime
+package net.pagala.kshikisdk.model
 
-import com.squareup.moshi.JsonClass
+import net.pagala.kshikisdk.interfaces.Anime
 
 data class AnimeModel(
     override val id: Int,

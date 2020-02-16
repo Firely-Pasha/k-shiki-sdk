@@ -1,4 +1,4 @@
-package net.pagala.kshikisdk.model.anime
+package net.pagala.kshikisdk.interfaces
 
 import com.squareup.moshi.JsonClass
 

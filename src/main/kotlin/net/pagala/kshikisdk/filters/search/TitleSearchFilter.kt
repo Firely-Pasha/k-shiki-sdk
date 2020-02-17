@@ -2,7 +2,7 @@ package net.pagala.kshikisdk.filters.search
 
 import net.pagala.kshikisdk.enums.TitleStatus
 
-open class TitleSearchFilter {
+abstract class TitleSearchFilter {
     var page: Int? = 1
     var limit: Int? = 10
     var score: Int? = null

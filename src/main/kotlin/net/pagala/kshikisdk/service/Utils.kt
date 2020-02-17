@@ -2,6 +2,7 @@ package net.pagala.kshikisdk.repository
 
 import net.pagala.kshikisdk.filters.search.AnimeSearchFilter
 import net.pagala.kshikisdk.filters.search.CollectionParameter
+import net.pagala.kshikisdk.filters.search.MangaSearchFilter
 import net.pagala.kshikisdk.filters.search.TitleSearchFilter
 import java.net.URLEncoder
 
@@ -57,6 +58,19 @@ internal fun AnimeSearchFilter.build() = mutableMapOf<String, String>().apply {
     }
     if (!studios.isEmpty()) {
         this += "studio" to studios.build()
+    }
+}
+
+internal fun MangaSearchFilter.build() = mutableMapOf<String, String>().apply {
+    this += buildTitle()
+    order?.let {
+        this += "order" to order.toString()
+    }
+    if (!kinds.isEmpty()) {
+        this += "kind" to kinds.build()
+    }
+    if (!publishers.isEmpty()) {
+        this += "publisher" to publishers.build()
     }
 }
 

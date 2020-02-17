@@ -1,6 +1,6 @@
 package net.pagala.kshikisdk.interfaces
 
-interface TitleInfo {
+interface TitleInfo : Title {
     val english: List<String>
     val japanese: List<String>
     val synonyms: List<String>

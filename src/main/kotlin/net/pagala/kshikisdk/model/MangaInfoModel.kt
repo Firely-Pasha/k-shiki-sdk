@@ -1,15 +1,14 @@
 package net.pagala.kshikisdk.model
 
 import com.squareup.moshi.Json
-import net.pagala.kshikisdk.enums.AnimeKind
-import net.pagala.kshikisdk.enums.AnimeRating
+import net.pagala.kshikisdk.enums.MangaKind
 import net.pagala.kshikisdk.enums.TitleStatus
-import net.pagala.kshikisdk.interfaces.AnimeInfo
+import net.pagala.kshikisdk.interfaces.MangaInfo
 
-data class AnimeInfoModel(
+data class MangaInfoModel(
     override val id: Int,
     override val name: String,
-    override val russian: String?,
+    override val russian: String,
     override val image: ImageModel,
     override val url: String,
 
@@ -19,10 +18,9 @@ data class AnimeInfoModel(
     override val releasedOn: String?,
     override val status: TitleStatus,
 
-    override val kind: AnimeKind,
-    override val episodes: Int,
-    @Json(name = "episodes_aired")
-    override val episodesAired: Int,
+    override val kind: MangaKind,
+    override val volumes: Int,
+    override val chapters: Int,
 
     override val english: List<String>,
     override val japanese: List<String>,
@@ -53,13 +51,5 @@ data class AnimeInfoModel(
     @Json(name = "user_rate")
     override val titleUserRate: TitleUserRateModel?,
 
-    override val rating: AnimeRating,
-    override val duration: Int,
-    @Json(name = "updated_at")
-    override val updatedAt: String,
-    @Json(name = "next_episode_at")
-    override val nextEpisodeAt: String?,
-    override val studios: List<StudioModel>,
-    override val videos: List<VideoModel>,
-    override val screenshots: List<ScreenshotModel>
-) : AnimeInfo
+    override val publishers: List<PublisherModel>
+) : MangaInfo

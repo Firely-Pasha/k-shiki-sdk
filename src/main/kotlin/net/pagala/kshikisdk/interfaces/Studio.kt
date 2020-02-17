@@ -1,8 +1,6 @@
 package net.pagala.kshikisdk.interfaces
 
-interface Studio {
-    val id: Int
-    val name: String
+interface Studio : Atom {
     val filteredName: String
     val real: Boolean
     val image: String?

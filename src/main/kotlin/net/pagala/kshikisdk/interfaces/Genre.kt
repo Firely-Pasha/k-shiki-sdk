@@ -1,8 +1,6 @@
 package net.pagala.kshikisdk.interfaces
 
-interface Genre {
-    val id: Int
-    val name: String
+interface Genre : Atom {
     val russian: String
     val kind: String
 }

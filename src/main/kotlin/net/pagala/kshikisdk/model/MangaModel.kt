@@ -1,11 +1,11 @@
 package net.pagala.kshikisdk.model
 
 import com.squareup.moshi.Json
-import net.pagala.kshikisdk.enums.AnimeKind
+import net.pagala.kshikisdk.enums.MangaKind
 import net.pagala.kshikisdk.enums.TitleStatus
-import net.pagala.kshikisdk.interfaces.Anime
+import net.pagala.kshikisdk.interfaces.Manga
 
-data class AnimeModel(
+data class MangaModel(
     override val id: Int,
     override val name: String,
     override val russian: String?,
@@ -18,8 +18,7 @@ data class AnimeModel(
     override val releasedOn: String?,
     override val status: TitleStatus,
 
-    override val kind: AnimeKind,
-    override val episodes: Int,
-    @Json(name = "episodes_aired")
-    override val episodesAired: Int
-) : Anime
+    override val kind: MangaKind,
+    override val volumes: Int,
+    override val chapters: Int
+) : Manga

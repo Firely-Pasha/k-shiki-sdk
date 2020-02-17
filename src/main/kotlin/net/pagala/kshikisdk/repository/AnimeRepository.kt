@@ -1,7 +1,6 @@
 package net.pagala.kshikisdk.repository
 
 import net.pagala.kshikisdk.ShikimoriSdk
-import net.pagala.kshikisdk.interfaces.AnimeInfo
 import net.pagala.kshikisdk.model.AnimeInfoModel
 import net.pagala.kshikisdk.model.AnimeModel
 import net.pagala.kshikisdk.model.RoleModel

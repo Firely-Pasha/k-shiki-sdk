@@ -1,6 +1,6 @@
 package net.pagala.kshikisdk.filters.search
 
-import java.net.URLEncoder
+import net.pagala.kshikisdk.enums.TitleStatus
 
 open class TitleSearchFilter {
     var page: Int? = 1

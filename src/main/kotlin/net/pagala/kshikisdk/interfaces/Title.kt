@@ -1,9 +1,9 @@
 package net.pagala.kshikisdk.interfaces
 
-import net.pagala.kshikisdk.filters.search.TitleStatus
+import net.pagala.kshikisdk.enums.TitleStatus
 
 interface Title : Unit {
     val airedOn: String
-    val releasedOn: String
+    val releasedOn: String?
     val status: TitleStatus
 }

@@ -1,8 +1,6 @@
 package net.pagala.kshikisdk.interfaces
 
-import com.squareup.moshi.JsonClass
-import net.pagala.kshikisdk.filters.search.AnimeKind
-import net.pagala.kshikisdk.filters.search.TitleStatus
+import net.pagala.kshikisdk.enums.AnimeKind
 
 interface Anime : Title {
     val kind: AnimeKind

@@ -1,4 +1,4 @@
-package net.pagala.kshikisdk.filters.search
+package net.pagala.kshikisdk.enums
 
 enum class AnimeOrder {
     ID,

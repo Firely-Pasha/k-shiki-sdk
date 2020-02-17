@@ -1,5 +1,7 @@
 package net.pagala.kshikisdk.filters.search
 
+import net.pagala.kshikisdk.enums.Season
+
 class SeasonYear {
     private var season: Season?
     private var year: Int

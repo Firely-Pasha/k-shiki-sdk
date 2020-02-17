@@ -60,16 +60,14 @@ internal fun AnimeSearchFilter.build() = mutableMapOf<String, String>().apply {
     }
 }
 
-internal fun <T> CollectionParameter<T>.build(): String {
-    val stringBuilder = StringBuilder()
+internal fun <T> CollectionParameter<T>.build() = StringBuilder().apply {
     if (include.isNotEmpty()) {
-        stringBuilder.append(include.joinToString(separator = ",") { t -> t.toString() })
+        append(include.joinToString(separator = ",") { t -> t.toString() })
     }
     if (exclude.isNotEmpty()) {
         if (include.isEmpty()) {
-            stringBuilder.append(',')
+            append(',')
         }
-        stringBuilder.append(exclude.joinToString(separator = ",") { t -> t.toString() })
+        append(exclude.joinToString(separator = ",") { t -> t.toString() })
     }
-    return stringBuilder.toString()
-}
+}.toString()

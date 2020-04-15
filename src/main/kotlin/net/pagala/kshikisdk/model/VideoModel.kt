@@ -10,7 +10,7 @@ data class VideoModel(
     override val imageUrl: String,
     @Json(name = "player_url")
     override val playerUrl: String,
-    override val name: String,
+    override val name: String?,
     override val kind: String,
     override val hosting: String
 ): Video

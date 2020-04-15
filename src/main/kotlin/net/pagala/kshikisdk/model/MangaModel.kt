@@ -13,7 +13,7 @@ data class MangaModel(
     override val url: String,
 
     @Json(name = "aired_on")
-    override val airedOn: String,
+    override val airedOn: String?,
     @Json(name = "released_on")
     override val releasedOn: String?,
     override val status: TitleStatus,

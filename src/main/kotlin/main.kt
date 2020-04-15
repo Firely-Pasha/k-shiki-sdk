@@ -8,13 +8,14 @@ import net.pagala.kshikisdk.interfaces.Anime
 
 fun main() {
     ShikimoriSdk("Firely-Pasha", "KShikiSdk").apply {
-//        createAnimeService().apply {
-//            val anime = getList(AnimeSearchFilter().apply {
-//
-//            })[0]
-//            anime.image.original
-//            println(get(1))
-//        }
+        createAnimeService().apply {
+            val anime = getList(AnimeSearchFilter().apply {
+                limit = 10
+                page = 1
+            })[2]
+            anime.image.original
+            println(get(anime.id))
+        }
         createMangaService().apply {
 //            val manga = get(1)
 //            println(manga)

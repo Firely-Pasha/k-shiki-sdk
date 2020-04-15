@@ -1,6 +1,8 @@
 package net.pagala.kshikisdk.interfaces
 
-interface Video : Atom {
+interface Video {
+    val id: Int
+    val name: String?
     val url: String
     val imageUrl: String
     val playerUrl: String

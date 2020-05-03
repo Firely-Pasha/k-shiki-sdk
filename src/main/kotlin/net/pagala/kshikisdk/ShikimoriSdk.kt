@@ -3,6 +3,7 @@ package net.pagala.kshikisdk
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import net.pagala.kshikisdk.service.AnimeService
+import net.pagala.kshikisdk.service.GenreService
 import net.pagala.kshikisdk.service.MangaService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -34,6 +35,8 @@ class ShikimoriSdk(
     fun createAnimeService() = AnimeService(retrofit)
 
     fun createMangaService() = MangaService(retrofit)
+
+    fun createGenreService() = GenreService(retrofit)
 
     private fun initClient(
         builderMod: ((OkHttpClient.Builder) -> OkHttpClient.Builder)? = null

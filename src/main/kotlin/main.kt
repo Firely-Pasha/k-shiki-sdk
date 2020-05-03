@@ -1,10 +1,5 @@
 import net.pagala.kshikisdk.ShikimoriSdk
-import net.pagala.kshikisdk.enums.MangaKind
-import net.pagala.kshikisdk.enums.MangaOrder
 import net.pagala.kshikisdk.filters.search.AnimeSearchFilter
-import net.pagala.kshikisdk.filters.search.MangaSearchFilter
-import net.pagala.kshikisdk.filters.search.TitleSearchFilter
-import net.pagala.kshikisdk.interfaces.Anime
 
 fun main() {
     ShikimoriSdk("Firely-Pasha", "KShikiSdk").apply {
@@ -15,6 +10,9 @@ fun main() {
             })[2]
             anime.image.original
             println(get(anime.id))
+        }
+        createGenreService().apply {
+            println(getList())
         }
         createMangaService().apply {
 //            val manga = get(1)

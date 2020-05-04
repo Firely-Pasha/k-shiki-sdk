@@ -79,9 +79,9 @@ internal fun <T> CollectionParameter<T>.build() = StringBuilder().apply {
         append(include.joinToString(separator = ",") { t -> t.toString() })
     }
     if (exclude.isNotEmpty()) {
-        if (include.isEmpty()) {
+        if (include.isNotEmpty()) {
             append(',')
         }
-        append(exclude.joinToString(separator = ",") { t -> t.toString() })
+        append(exclude.joinToString(separator = ",") { t -> "!${t.toString()    }" })
     }
 }.toString()

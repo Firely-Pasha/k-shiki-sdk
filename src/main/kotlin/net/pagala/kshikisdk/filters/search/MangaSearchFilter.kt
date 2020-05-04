@@ -6,6 +6,6 @@ import net.pagala.kshikisdk.enums.MangaOrder
 class MangaSearchFilter : TitleSearchFilter() {
     var order: MangaOrder? = null
 
-    val kinds = CollectionParameter<MangaKind>()
-    val publishers = CollectionParameter<Int>()
+    var kinds = CollectionParameter<MangaKind>()
+    var publishers = CollectionParameter<Int>()
 }

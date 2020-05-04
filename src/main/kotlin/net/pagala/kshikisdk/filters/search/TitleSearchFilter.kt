@@ -9,10 +9,10 @@ abstract class TitleSearchFilter {
     var censored: Boolean? = null
     var query: String? = null
 
-    val statuses = CollectionParameter<TitleStatus>()
-    val seasons = CollectionParameter<SeasonYear>()
-    val ids = CollectionParameter<Int>()
-    val excludeIds = CollectionParameter<Int>()
-    val myLists = CollectionParameter<Int>()
-    val genres = CollectionParameter<Int>()
+    var statuses = CollectionParameter<TitleStatus>()
+    var seasons = CollectionParameter<SeasonYear>()
+    var ids = CollectionParameter<Int>()
+    var excludeIds = CollectionParameter<Int>()
+    var myLists = CollectionParameter<Int>()
+    var genres = CollectionParameter<Int>()
 }

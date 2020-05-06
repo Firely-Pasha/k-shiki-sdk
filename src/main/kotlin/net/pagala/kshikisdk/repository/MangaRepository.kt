@@ -3,6 +3,7 @@ package net.pagala.kshikisdk.repository
 import net.pagala.kshikisdk.ShikimoriSdk
 import net.pagala.kshikisdk.model.MangaInfoModel
 import net.pagala.kshikisdk.model.MangaModel
+import net.pagala.kshikisdk.model.RelationModel
 import net.pagala.kshikisdk.model.RoleModel
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -28,4 +29,7 @@ interface MangaRepository {
 
     @GET("$URL/{id}/similar")
     fun getSimilar(@Path("id") id: Int): List<MangaModel>
+
+    @GET("$URL/{id}/related")
+    fun getRelated(@Path("id") id: Int): List<RelationModel>
 }

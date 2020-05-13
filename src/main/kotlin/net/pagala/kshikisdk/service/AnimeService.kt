@@ -1,28 +1,28 @@
 package net.pagala.kshikisdk.service
 
 import net.pagala.kshikisdk.filters.search.AnimeSearchFilter
+import net.pagala.kshikisdk.filters.search.TitleSearchFilter
 import net.pagala.kshikisdk.interfaces.Anime
 import net.pagala.kshikisdk.interfaces.AnimeInfo
-import net.pagala.kshikisdk.interfaces.Relation
 import net.pagala.kshikisdk.repository.AnimeRepository
-import net.pagala.kshikisdk.repository.build
 import retrofit2.Retrofit
 
+@Suppress("UNCHECKED_CAST")
 class AnimeService(
     retrofit: Retrofit
-) {
-    private val animeRepository: AnimeRepository = retrofit.create(AnimeRepository::class.java)
+) : TitleService() {
 
-    fun get(anime: Int) = animeRepository.get(anime) as AnimeInfo
+    override val titleRepository: AnimeRepository = retrofit.create(AnimeRepository::class.java)
 
-    fun getList() = animeRepository.getList() as List<Anime>
+    override fun get(titleId: Int) = super.get(titleId) as AnimeInfo
 
-    fun getList(animeSearchFilter: AnimeSearchFilter) =
-        animeRepository.getList(animeSearchFilter.build()) as List<Anime>
+    override fun getList() = super.getList() as List<Anime>
 
-    fun getRoles(anime: Int) = animeRepository.getRoles(anime)
+    /**
+     * @param titleSearchFilter Use [AnimeSearchFilter] class
+     */
+    override fun getList(titleSearchFilter: TitleSearchFilter) = super.getList(titleSearchFilter) as List<Anime>
 
-    fun getSimilar(anime: Int) = animeRepository.getSimilar(anime) as List<Anime>
+    override fun getSimilar(titleId: Int) = super.getSimilar(titleId) as List<Anime>
 
-    fun getRelated(anime: Int) = animeRepository.getRelated(anime) as List<Relation>
 }

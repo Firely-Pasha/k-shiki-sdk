@@ -9,27 +9,27 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface AnimeRepository {
+interface AnimeRepository: TitleRepository {
 
     companion object {
         const val URL = ShikimoriSdk.API_PATH + "animes"
     }
 
     @GET("$URL/{id}")
-    fun get(@Path("id") id: Int): AnimeInfoModel
+    override fun get(@Path("id") id: Int): AnimeInfoModel
 
     @GET(URL)
-    fun getList(): List<AnimeModel>
+    override fun getList(): List<AnimeModel>
 
     @GET(URL)
-    fun getList(@QueryMap fields: Map<String, String>): List<AnimeModel>
+    override fun getList(@QueryMap fields: Map<String, String>): List<AnimeModel>
 
     @GET("$URL/{id}/roles")
-    fun getRoles(@Path("id") id: Int): List<RoleModel>
+    override fun getRoles(@Path("id") id: Int): List<RoleModel>
 
     @GET("$URL/{id}/similar")
-    fun getSimilar(@Path("id") id: Int): List<AnimeModel>
+    override fun getSimilar(@Path("id") id: Int): List<AnimeModel>
 
     @GET("$URL/{id}/related")
-    fun getRelated(@Path("id") id: Int): List<RelationModel>
+    override fun getRelated(@Path("id") id: Int): List<RelationModel>
 }

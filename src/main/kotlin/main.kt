@@ -12,6 +12,7 @@ fun main() {
 //                exclude.add(AnimeKind.TV)
 //                include.add(AnimeKind.TV)
 //            }.build())
+            println(get(1))
             println(getRelated(1))
         }
 //        createGenreService().apply {

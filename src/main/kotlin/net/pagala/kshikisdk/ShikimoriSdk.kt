@@ -8,6 +8,8 @@ import net.pagala.kshikisdk.service.MangaService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.logging.Level
+import java.util.logging.Logger
 
 
 class ShikimoriSdk(
@@ -45,12 +47,14 @@ class ShikimoriSdk(
             val request = chain.request()
             chain.proceed(
                 request.newBuilder().apply {
-                    println(request.url().toString())
+                    Logger.getGlobal().log(Level.INFO, "KShikiSDK Request: ${request.url()}")
                     addHeader("User-Agent", "$appName $developerName")
                     if (!accessToken.isBlank()) {
                         addHeader("Authorization", "Bearer $accessToken")
                     }
-                }.build()
+                }.build().apply {
+                    Logger.getGlobal().log(Level.INFO, "KShikiSDK Headers: \n${headers()}")
+                }
             )
         }
         builderMod?.invoke(this)

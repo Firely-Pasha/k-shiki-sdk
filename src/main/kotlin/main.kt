@@ -12,8 +12,12 @@ fun main() {
 //                exclude.add(AnimeKind.TV)
 //                include.add(AnimeKind.TV)
 //            }.build())
-            println(get(1))
-            println(getRelated(1))
+//            println(get(1))
+//            println(getRelated(1))
+        }
+        createCharacterService().apply {
+            print(get(124989))
+            print(search("Spike").size)
         }
 //        createGenreService().apply {
 //            println(getList())

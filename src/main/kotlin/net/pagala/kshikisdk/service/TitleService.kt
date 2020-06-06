@@ -1,21 +1,22 @@
 package net.pagala.kshikisdk.service
 
 import net.pagala.kshikisdk.filters.search.TitleSearchFilter
-import net.pagala.kshikisdk.repository.TitleRepository
+import net.pagala.kshikisdk.interfaces.Relation
+import net.pagala.kshikisdk.interfaces.Role
+import net.pagala.kshikisdk.interfaces.Title
+import net.pagala.kshikisdk.interfaces.TitleInfo
 
-abstract class TitleService {
+interface TitleService {
 
-    protected abstract val titleRepository: TitleRepository
+    fun get(titleId: Int): TitleInfo
 
-    open fun get(titleId: Int) = titleRepository.get(titleId)
+    fun getList(): List<Title>
 
-    open fun getList() = titleRepository.getList()
+    fun getList(titleSearchFilter: TitleSearchFilter): List<Title>
 
-    open fun getList(titleSearchFilter: TitleSearchFilter) = titleRepository.getList(titleSearchFilter.build())
+    fun getRoles(titleId: Int): List<Role>
 
-    open fun getRoles(titleId: Int) = titleRepository.getRoles(titleId)
+    fun getSimilar(titleId: Int): List<Title>
 
-    open fun getSimilar(titleId: Int) = titleRepository.getSimilar(titleId)
-
-    open fun getRelated(titleId: Int) = titleRepository.getRelated(titleId)
+    fun getRelated(titleId: Int): List<Relation>
 }

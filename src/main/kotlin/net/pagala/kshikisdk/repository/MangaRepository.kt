@@ -1,15 +1,15 @@
 package net.pagala.kshikisdk.repository
 
 import net.pagala.kshikisdk.ShikimoriSdk
-import net.pagala.kshikisdk.model.MangaInfoModel
-import net.pagala.kshikisdk.model.MangaModel
-import net.pagala.kshikisdk.model.RelationModel
-import net.pagala.kshikisdk.model.RoleModel
+import net.pagala.kshikisdk.internalmodel.MangaInfoModel
+import net.pagala.kshikisdk.internalmodel.MangaModel
+import net.pagala.kshikisdk.internalmodel.RelationModel
+import net.pagala.kshikisdk.internalmodel.RoleModel
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
 
-interface MangaRepository {
+internal interface MangaRepository {
 
     companion object {
         const val URL = ShikimoriSdk.API_PATH + "mangas"

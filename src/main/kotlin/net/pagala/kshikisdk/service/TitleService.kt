@@ -1,10 +1,10 @@
 package net.pagala.kshikisdk.service
 
 import net.pagala.kshikisdk.filters.search.TitleSearchFilter
-import net.pagala.kshikisdk.interfaces.Relation
-import net.pagala.kshikisdk.interfaces.Role
-import net.pagala.kshikisdk.interfaces.Title
-import net.pagala.kshikisdk.interfaces.TitleInfo
+import net.pagala.kshikisdk.model.Relation
+import net.pagala.kshikisdk.model.Role
+import net.pagala.kshikisdk.model.Title
+import net.pagala.kshikisdk.model.TitleInfo
 
 interface TitleService {
 

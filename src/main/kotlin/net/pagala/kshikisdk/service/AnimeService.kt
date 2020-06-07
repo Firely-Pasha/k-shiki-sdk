@@ -2,10 +2,10 @@ package net.pagala.kshikisdk.service
 
 import net.pagala.kshikisdk.filters.search.AnimeSearchFilter
 import net.pagala.kshikisdk.filters.search.TitleSearchFilter
-import net.pagala.kshikisdk.interfaces.Anime
-import net.pagala.kshikisdk.interfaces.AnimeInfo
-import net.pagala.kshikisdk.interfaces.Relation
-import net.pagala.kshikisdk.interfaces.Role
+import net.pagala.kshikisdk.model.Anime
+import net.pagala.kshikisdk.model.AnimeInfo
+import net.pagala.kshikisdk.model.Relation
+import net.pagala.kshikisdk.model.Role
 import net.pagala.kshikisdk.repository.AnimeRepository
 import retrofit2.Retrofit
 
@@ -14,7 +14,7 @@ class AnimeService(
     retrofit: Retrofit
 ) : TitleService {
 
-    val titleRepository: AnimeRepository = retrofit.create(AnimeRepository::class.java)
+    private val titleRepository: AnimeRepository = retrofit.create(AnimeRepository::class.java)
 
     override fun get(titleId: Int) = titleRepository.get(titleId) as AnimeInfo
 

@@ -1,13 +1,13 @@
 package net.pagala.kshikisdk.repository
 
 import net.pagala.kshikisdk.ShikimoriSdk
-import net.pagala.kshikisdk.model.CharacterInfoModel
-import net.pagala.kshikisdk.model.CharacterModel
+import net.pagala.kshikisdk.internalmodel.CharacterInfoModel
+import net.pagala.kshikisdk.internalmodel.CharacterModel
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface CharactersRepository {
+internal interface CharactersRepository {
 
     companion object {
         const val URL = ShikimoriSdk.API_PATH + "characters"

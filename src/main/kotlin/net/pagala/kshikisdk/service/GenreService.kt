@@ -1,6 +1,6 @@
 package net.pagala.kshikisdk.service
 
-import net.pagala.kshikisdk.interfaces.Genre
+import net.pagala.kshikisdk.model.Genre
 import net.pagala.kshikisdk.repository.GenreRepository
 import retrofit2.Retrofit
 

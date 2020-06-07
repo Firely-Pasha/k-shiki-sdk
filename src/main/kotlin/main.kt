@@ -16,7 +16,7 @@ fun main() {
 //            println(getRelated(1))
         }
         createCharacterService().apply {
-            print(get(124989))
+            print(get(1))
             print(search("Spike").size)
         }
 //        createGenreService().apply {

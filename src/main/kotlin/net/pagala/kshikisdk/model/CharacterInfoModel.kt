@@ -25,7 +25,7 @@ data class CharacterInfoModel(
     @Json(name = "updated_at")
     override val updatedAt: String,
     override val seyu: List<CharacterModel>,
-    override val animes: List<AnimeModel>,
+    override val animes: List<AnimeWithRoleModel>,
     @Json(name = "mangas")
-    override val mangasAndRanobes: List<MangaModel>
+    override val mangasAndRanobes: List<MangaWithRoleModel>
 ): CharacterInfo

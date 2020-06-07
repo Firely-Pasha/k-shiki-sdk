@@ -11,6 +11,6 @@ interface CharacterInfo : Character {
     val topicId: Int?
     val updatedAt: String
     val seyu: List<Character>
-    val animes: List<Anime>
-    val mangasAndRanobes: List<Manga>
+    val animes: List<AnimeWithRole>
+    val mangasAndRanobes: List<MangaWithRole>
 }

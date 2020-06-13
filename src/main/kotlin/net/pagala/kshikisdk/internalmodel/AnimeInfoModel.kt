@@ -19,7 +19,7 @@ internal data class AnimeInfoModel(
     override val releasedOn: String?,
     override val status: TitleStatus,
 
-    override val kind: AnimeKind,
+    override val kind: AnimeKind?,
     override val episodes: Int,
     @Json(name = "episodes_aired")
     override val episodesAired: Int,

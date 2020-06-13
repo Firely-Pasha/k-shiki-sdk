@@ -2,7 +2,7 @@ import net.pagala.kshikisdk.ShikimoriSdk
 
 fun main() {
     ShikimoriSdk("Firely-Pasha", "KShikiSdk").apply {
-        createAnimeService().apply {
+//        createAnimeService().apply {
 //            val anime = getList(AnimeSearchFilter().apply {
 //                limit = 10
 //                page = 1
@@ -14,10 +14,14 @@ fun main() {
 //            }.build())
 //            println(get(1))
 //            println(getRelated(1))
-        }
-        createCharacterService().apply {
+//        }
+//        createCharacterService().apply {
+//            print(get(1))
+//            print(search("Spike").size)
+//        }
+        createPeopleService().apply {
             print(get(1))
-            print(search("Spike").size)
+            print(search("miura").size)
         }
 //        createGenreService().apply {
 //            println(getList())

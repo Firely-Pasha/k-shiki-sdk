@@ -1,39 +1,11 @@
-import net.pagala.kshikisdk.ShikimoriSdk
+import kotlinx.coroutines.coroutineScope
+import net.pagala.shikimorisdk.ShikimoriSdk
 
-fun main() {
+suspend fun main() = coroutineScope {
     ShikimoriSdk("Firely-Pasha", "KShikiSdk").apply {
-//        createAnimeService().apply {
-//            val anime = getList(AnimeSearchFilter().apply {
-//                limit = 10
-//                page = 1
-//            })[2]
-//            anime.image.original
-//            println(CollectionParameter<AnimeKind>().apply {
-//                exclude.add(AnimeKind.TV)
-//                include.add(AnimeKind.TV)
-//            }.build())
-//            println(get(1))
-//            println(getRelated(1))
-//        }
-//        createCharacterService().apply {
-//            print(get(1))
-//            print(search("Spike").size)
-//        }
-        createPeopleService().apply {
-            print(get(1))
-            print(search("miura").size)
+        createAnimeService().apply {
+            println(get(1))
         }
-//        createGenreService().apply {
-//            println(getList())
-//        }
-//        createMangaService().apply {
-////            val manga = get(1)
-////            println(manga)
-////            println(getList(MangaSearchFilter().apply {
-////                order = MangaOrder.CHAPTERS
-////            }))
-////            println(getRoles(1))
-////            println(getSimilar(1))
-//        }
     }
+    Unit
 }

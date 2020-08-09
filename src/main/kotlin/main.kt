@@ -6,6 +6,9 @@ suspend fun main() = coroutineScope {
         createAnimeService().apply {
             println(get(1))
         }
+        createCalendarService().apply {
+            println(get())
+        }
     }
     Unit
 }

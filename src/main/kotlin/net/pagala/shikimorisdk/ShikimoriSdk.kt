@@ -36,6 +36,8 @@ class ShikimoriSdk(
 
     fun createMangaService() = MangaService(retrofit)
 
+    fun createCalendarService() = CalendarService(retrofit)
+
     fun createGenreService() = GenreService(retrofit)
 
     fun createCharacterService() = CharacterService(retrofit)

@@ -26,4 +26,7 @@ abstract class BaseService {
         return Resource.error(throwable)
     }
 
+    protected fun prepareToken(token: String?) = token?.let {
+        "Bearer $it"
+    }
 }

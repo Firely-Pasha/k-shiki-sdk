@@ -22,8 +22,6 @@ class ShikimoriSdk(
         const val API_V2_PATH = API_PATH + "v2/"
     }
 
-    var accessToken = ""
-
     private val okHttpClient: OkHttpClient
     private val retrofit: Retrofit
 
@@ -31,6 +29,10 @@ class ShikimoriSdk(
         okHttpClient = initClient(clientBuilderMod)
         retrofit = initRetrofit(retrofitBuilderMod)
     }
+
+    fun createAuthService() = AuthService(retrofit)
+
+    fun createUserService() = UserService(retrofit)
 
     fun createAnimeService() = AnimeService(retrofit)
 
@@ -53,9 +55,6 @@ class ShikimoriSdk(
                 request.newBuilder().apply {
                     Logger.getGlobal().log(Level.INFO, "KShikiSDK Request: ${request.url()}")
                     addHeader("User-Agent", "$appName $developerName")
-                    if (!accessToken.isBlank()) {
-                        addHeader("Authorization", "Bearer $accessToken")
-                    }
                 }.build().apply {
                     Logger.getGlobal().log(Level.INFO, "KShikiSDK Headers: \n${headers()}")
                 }

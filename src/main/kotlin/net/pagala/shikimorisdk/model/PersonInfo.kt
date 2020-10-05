@@ -1,7 +1,7 @@
 package net.pagala.shikimorisdk.model
 
 interface PersonInfo : Character {
-    val japanese: String
+    val japanese: String?
     val jobTitle: String?
     val birthday: String?
     val website: String?

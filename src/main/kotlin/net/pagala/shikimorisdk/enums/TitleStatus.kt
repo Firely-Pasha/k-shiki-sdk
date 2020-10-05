@@ -8,7 +8,10 @@ enum class TitleStatus {
     @Json(name = "ongoing")
     ONGOING,
     @Json(name = "released")
-    RELEASED;
+    RELEASED,
+    @Json(name = "paused")
+    PAUSED;
+
 
     override fun toString() = name.toLowerCase()
 }

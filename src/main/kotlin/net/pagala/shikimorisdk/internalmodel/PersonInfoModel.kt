@@ -10,7 +10,7 @@ internal data class PersonInfoModel(
     override val image: ImageModel,
     override val url: String,
 
-    override val japanese: String,
+    override val japanese: String?,
     @Json(name = "job_title")
     override val jobTitle: String?,
     override val birthday: String?,
